@@ -6,6 +6,14 @@ from keras.layers import Dense, Activation, Dropout
 from keras.optimizers import SGD
 from keras.datasets import mnist
 
+# In Python3, use urllib instead of urllib2
+import ssl
+import urllib
+
+# Prevent https access from SLL certificate verification
+# Close certificate verification when importing SLL
+ssl._create_default_https_context = ssl._create_unverified_context
+
 # Hyperparameters
 NB_EPOCHS = 100
 BATCH_SIZE = 128
